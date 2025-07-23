@@ -38,8 +38,8 @@ El portafolio está disponible en:
 
 ## 📬 Contacto
 ¿Te interesa colaborar conmigo o tienes un proyecto en mente? ¡Hablemos!  
-- **Email**: tuemail@correo.com  
-- **LinkedIn**: [linkedin.com/in/pame](#)  
+- **Email**: drodriguez64@ucol.mx  
+- **LinkedIn**: [linkedin.com/in/pame](https://www.linkedin.com/in/daira-pamela-rodriguez-gomez-167452324/)  
 - **GitHub**: [github.com/pame-dev](https://github.com/pame-dev)  
 
 ---
