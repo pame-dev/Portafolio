@@ -41,6 +41,26 @@ export const ui = {
   skillsTitle: { es: 'Herramientas', en: 'Toolbox' },
   certsTitle: { es: 'Certificaciones', en: 'Certifications' },
   close: { es: 'Cerrar', en: 'Close' },
+  play: { es: 'Ver video', en: 'Watch video' },
+  more: { es: 'Más capturas', en: 'More shots' },
+  stats: {
+    projects: { es: 'proyectos', en: 'projects' },
+    certs: { es: 'certificaciones', en: 'certifications' },
+    semester: { es: 'semestre', en: 'semester' },
+  },
+  copy: { es: 'Copiar correo', en: 'Copy email' },
+  copied: { es: 'Correo copiado', en: 'Email copied' },
+  palette: {
+    open: { es: 'Buscar', en: 'Search' },
+    placeholder: { es: 'Escribe un comando o busca una sección…', en: 'Type a command or search a section…' },
+    empty: { es: 'Sin resultados', en: 'No results' },
+    goTo: { es: 'Ir a', en: 'Go to' },
+    focus: { es: 'Enfoque', en: 'Focus' },
+    lang: { es: 'Switch to English', en: 'Cambiar a español' },
+    theme: { es: 'Cambiar tema claro / oscuro', en: 'Toggle light / dark theme' },
+    open_: { es: 'Abrir', en: 'Open' },
+    hint: { es: 'para navegar', en: 'to navigate' },
+  },
   photoAlt: { es: 'Foto de Pamela Rodríguez', en: 'Photo of Pamela Rodríguez' },
   pathTitle: { es: 'Formación', en: 'Background' },
   contactTitle: { es: '¿Trabajamos juntos?', en: "Let's work together" },
@@ -48,7 +68,7 @@ export const ui = {
     es: 'Busco prácticas profesionales a partir de enero de 2028 como desarrolladora fullstack, analista de datos o QA. También me interesan proyectos para seguir aprendiendo. Escríbeme y platicamos.',
     en: "I'm looking for an internship starting January 2028 as a fullstack developer, data analyst or QA engineer, and I'm open to projects where I can keep learning. Reach out and let's talk.",
   },
-  footer: { es: 'Hecho con React por Pamela', en: 'Built with React by Pamela' },
+  footer: { es: 'Diseñado y construido por Pamela con React + TypeScript', en: 'Designed and built by Pamela with React + TypeScript' },
   toggleTheme: { es: 'Cambiar tema', en: 'Toggle theme' },
 } satisfies Record<string, T | Record<string, T>>
 
@@ -104,7 +124,7 @@ export const lenses: { id: Lens; label: T; headline: T; pitch: T }[] = [
 ]
 
 export type Media =
-  | { kind: 'image'; src: string; alt: T }
+  | { kind: 'image'; src: string; alt: T; frame?: 'phone' | 'browser' }
   | { kind: 'video'; src: string; poster: string; alt: T }
 
 export type Project = {
@@ -139,8 +159,8 @@ export const projects: Project[] = [
     repo: gh('Mobile-application'),
     live: 'https://karsy.netlify.app',
     media: [
-      { kind: 'image', src: m('karsy-1.webp'), alt: { es: 'Pantalla de inicio de sesión de Karsy', en: 'Karsy sign-in screen' } },
-      { kind: 'image', src: m('karsy-2.webp'), alt: { es: 'Catálogo de vehículos en Karsy', en: 'Karsy vehicle listings' } },
+      { kind: 'image', frame: 'phone', src: m('karsy-1.webp'), alt: { es: 'Pantalla de inicio de sesión de Karsy', en: 'Karsy sign-in screen' } },
+      { kind: 'image', frame: 'phone', src: m('karsy-2.webp'), alt: { es: 'Catálogo de vehículos en Karsy', en: 'Karsy vehicle listings' } },
     ],
   },
   {
@@ -176,7 +196,7 @@ export const projects: Project[] = [
     live: 'https://pitline.site',
     media: [
       { kind: 'video', src: m('pitline.mp4'), poster: m('pitline-poster.jpg'), alt: { es: 'Video de presentación de PitLine', en: 'PitLine demo video' } },
-      { kind: 'image', src: m('pitline-1.webp'), alt: { es: 'PitLine en el celular', en: 'PitLine on mobile' } },
+      { kind: 'image', frame: 'phone', src: m('pitline-1.webp'), alt: { es: 'PitLine en el celular', en: 'PitLine on mobile' } },
     ],
   },
   {
@@ -193,7 +213,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/Edubedo/MasAllaDelPIB',
     live: 'https://masalladelpib.site',
     media: [
-      { kind: 'image', src: m('pib-1.webp'), alt: { es: 'Página principal del blog Más Allá del PIB', en: 'Más Allá del PIB blog home page' } },
+      { kind: 'image', frame: 'browser', src: m('pib-1.webp'), alt: { es: 'Página principal del blog Más Allá del PIB', en: 'Más Allá del PIB blog home page' } },
     ],
   },
   {
@@ -242,7 +262,7 @@ export const projects: Project[] = [
     repo: gh('buscador-de-personajes-de-Rick-y-Mort'),
     live: 'https://683a3f7251d0807ad2d6a64f--remarkable-crepe-006513.netlify.app',
     media: [
-      { kind: 'image', src: m('rym-1.webp'), alt: { es: 'Buscador con filtros y tarjetas de personajes', en: 'Search filters and character cards' } },
+      { kind: 'image', frame: 'browser', src: m('rym-1.webp'), alt: { es: 'Buscador con filtros y tarjetas de personajes', en: 'Search filters and character cards' } },
     ],
   },
 ]
